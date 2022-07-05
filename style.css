@@ -1,0 +1,225 @@
+.container {
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+.container .info {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #ddd;
+}
+.container .info .ask {
+    color: rgb(230, 23, 23);
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 18px;
+}
+.container .game {
+    margin-top: 20px;
+    display: flex;
+}
+.container .game > div {
+    flex-basis: 50%;
+    height: 350px;
+}
+.container .game .draw {
+    background: rgb(240, 240, 240);
+    position: relative;
+}
+.container .game .draw .floor {
+    position: absolute;
+    width: 90px;
+    height: 4px;
+    bottom: 5px;
+    background: #000;
+    left: 40%;
+    transform: translateX(-50%);
+    display: none;
+}
+.container .game .draw .rod {
+    width: 4px;
+    height: 300px;
+    position: absolute;
+    background: #000;
+    left: 40%;
+    transform: translateX(-50%);
+    bottom: 9px;
+    display: none;
+}
+.container .game .draw .secondRod {
+    width: 120px;
+    height: 40px;
+    position: absolute;
+    border-top: 4px solid #000;
+    border-right: 4px solid #000;
+    left: 40%;
+    top: 70px;
+    display: none;
+}
+.container .game .draw .cord {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 4px dashed #000;
+    left: 57%;
+    top: 110px;
+    display: none;
+}
+.container .game .draw .head {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #000;
+    left: 59.25%;
+    top: 121px;
+    display: none;
+}
+.container .game .draw .body {
+    width: 3px;
+    height: 120px;
+    background: #000;
+    position: absolute;
+    left: 64.5%;
+    top: 174px;
+    display: none;
+}
+.container .game .draw .hands {
+    position: relative;
+    top: 216px;
+    left: 64.5%;
+    display: none;
+}
+.container .game .draw .hands::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 50px;
+    background: #000;
+    transform: rotate(-28deg);
+}
+.container .game .draw .hands::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 50px;
+    background: #000;
+    transform: rotate(28deg);
+    right: 99%;
+}
+.container .game .draw .legs {
+    position: relative;
+    top: 304px;
+    left: 64.5%;
+    display: none;
+}
+.container .game .draw .legs::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 50px;
+    background: #000;
+    transform: rotate(28deg);
+}
+.container .game .draw .legs::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 50px;
+    background: #000;
+    transform: rotate(-28deg);
+    right: 99.5%;
+}
+.container .game .draw .show {
+    display: block;
+}
+.container .game .alphabet {
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 230px;
+}
+.container .game .alphabet span {
+    font-weight: bold;
+    flex-basis: 8%;
+    color: #fff;
+    font-size: 20px;
+    background: rgb(0,150,136);
+    margin: 7px;
+    text-align: center;
+    line-height: 40px;
+    padding: 5px;
+    cursor: pointer;
+}
+.container .game .alphabet span.clicked {
+    background: #ddd;
+    cursor: no-drop;
+}
+.container .result {
+    width: 100%;
+    background: rgb(240, 240, 240);
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+.container .result span {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-bottom: 2px solid #000;
+    margin: 5px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+}
+.container .result span.space {
+    background: rgb(240, 240, 240);
+    border-bottom: none;
+    position: relative;
+}
+.container .result span.space::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.showFinalResult {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    display: none;
+}
+.showFinalResult.show {
+    display: block;
+}
+.showFinalResult > p {
+    position: fixed;
+    width: 300px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 25px;
+    color: #fff;
+    background: rgb(0,150,136);
+    text-align: center;
+    line-height: 200px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #999;
+}
